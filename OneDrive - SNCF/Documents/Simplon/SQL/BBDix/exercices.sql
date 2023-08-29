@@ -90,20 +90,8 @@ num_hab|
 
 select num_trophee, date_prise , code_cat, nom as nom_du_preneur
 from trophee t 
+join categorie on t.code_cat = categorie.code_cat
 join habitant h on num_hab = num_preneur ;
-
-num_trophee|date_prise|code_cat|nom_du_preneur|
------------+----------+--------+--------------+
-          1|2052-04-03|BLE     |Astérix       |
-          2|2052-04-03|BLT     |Obélix        |
-          3|2052-05-05|CDN     |Pronostix     |
-          4|2052-05-05|CLE     |Goudurix      |
-          5|2052-06-06|CCN     |Goudurix      |
-          6|2052-06-06|BLT     |Bellodalix    |
-          7|2052-08-18|CCN     |Bellodalix    |
-          8|2052-09-20|CLT     |Abraracourcix |
-          9|2052-10-23|CDN     |Astérix       |
-         10|2052-10-23|CLE     |Goudurix      |
 
 --8. Nom des habitants qui habitent à Aquilona. (7 lignes)
 
@@ -261,13 +249,7 @@ Zérozérosix    | 75|
 select nom_resserre, r.num_village as nom_village
 from resserre r
 join village v on v.num_village = r.num_village 
-order by superficie asc;
-
-nom_resserre |nom_village|
--------------+-----------+
-Vercingetorix|          6|
-Albinus      |          4|
-Sintrof      |          1|
+order by superficie;
 
 --***
 
